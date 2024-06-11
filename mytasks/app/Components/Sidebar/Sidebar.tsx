@@ -4,11 +4,23 @@ import { useGlobalState } from '@/app/context/globalProvider'
 import React from 'react'
 import styled from 'styled-components/dist/constructors/styled'
 import Image from 'next/image'
-
+import  menu  from "@/app/utils/menu"
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 function Sidebar() {
 const {theme} = useGlobalState();
-  
+const router = useRouter
+const pathname = usePathname
+
+const handleClick = (link:string) => {
+
+  Router.push(link)
+
+};
+
+
   return <SidebarStyled theme={theme}>
       <div className='profile'>
         <div className="profile-overlay"></div>
@@ -20,7 +32,16 @@ const {theme} = useGlobalState();
       </h1>
       </div>
       <ul className='nav-items'>
-        
+        {menu.map((item) => {
+          return <li className={'nav-item'} onClick={() => {
+            handleClick(item.link)
+          }}>
+            {item.icon}
+            <Link href={item.link}>
+              {item.title}
+            </Link>
+          </li>
+        })}
       </ul>
     </SidebarStyled>
   
