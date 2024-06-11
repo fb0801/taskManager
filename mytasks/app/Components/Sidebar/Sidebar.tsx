@@ -12,8 +12,16 @@ const {theme} = useGlobalState();
   return <SidebarStyled theme={theme}>
       <div className='profile'>
         <div className="profile-overlay"></div>
+        <div className="image">
       <Image width={70} height={70} src='/images/profile.jpg' alt='profile' />
       </div>
+      <h1>
+          <span></span>
+      </h1>
+      </div>
+      <ul className='nav-items'>
+        
+      </ul>
     </SidebarStyled>
   
 }
