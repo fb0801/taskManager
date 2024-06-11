@@ -1,16 +1,26 @@
 'use client'
 
+import { useGlobalState } from '@/app/context/globalProvider'
 import React from 'react'
 import styled from 'styled-components/dist/constructors/styled'
 
-const Sidebar = () => {
-  return (
-    <SidebarStyled>
+
+function Sidebar() {
+const {theme} = useGlobalState();
+  
+  return <SidebarStyled theme={theme}>
       sidebar
     </SidebarStyled>
-  )
+  
 }
 
-const SidebarStyled = styled.nav``; 
+const SidebarStyled = styled.nav`
+  position: relative;
+  width: ${(props) => props.theme.sidebarWidth};
+  background-color: ${(props) => props.theme.colorBg2};
+  border-right: 2px solid ${(props) => props.theme.borderColor2}
+  border-radius: 1rem;
+  ;
+`; 
 
-export default Sidebar
+export default Sidebar;
