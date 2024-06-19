@@ -4,6 +4,7 @@ fullstack task manager built using Nextjs, React, Prisma and MongoDB
 
 ## Issues:
 
+-  "prisma init --datasource-provider mongodb" does not instead used -> npx prisma init
 
 ## changes made:
 

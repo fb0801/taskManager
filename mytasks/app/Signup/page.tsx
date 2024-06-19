@@ -1,9 +1,14 @@
 "use client";
 import React from 'react'
+import {Signup} from "@clerk/nextjs"
 
-const page = () => {
+function page()  {
   return (
-    <div>Sign up page</div>
+    <div>
+
+    <Signup />
+
+    </div>
   )
 }
 
