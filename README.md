@@ -24,3 +24,5 @@ https://cdnjs.com/libraries/font-awesome
 https://clerk.com/docs/references/nodejs/overview
 
 https://www.npmjs.com/package/@clerk/nextjs
+
+https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/mongodb-typescript-mongodb
