@@ -10,7 +10,9 @@ import Modal from "../Modals/Modal";
 function Tasks()  {
     const {theme} = useGlobalState()
   
-    return <TaskStyled theme={theme}>Tasks</TaskStyled>
+    return <TaskStyled theme={theme}>
+    <CreateContent />
+    </TaskStyled>
 
 }
 
