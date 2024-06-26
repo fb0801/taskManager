@@ -21,15 +21,19 @@ function Tasks({title, tasks} :Props)  {
       <h1>{title}</h1>
    <div className="tasks grid">
     {tasks.map((task) => (
-      <div className="task" key={task._id}>
-        <h2>{task.title}</h2>
-        <p>{task.description}</p>
-        <p>{task.date}</p>
-        <p>{task.completed}</p>
-        <p>{task.important}</p>
-      </div>
+     <TaskItem 
+     key={task.id} 
+     title={task.title}
+     description={task.description}
+     date={task.date}
+     isCompleted={task.completed}
+     id={task.id}
+     />
     ))}
-
+    <button className="create-task">
+      {plus}
+      Add New Task
+    </button>
    </div>
     </TaskStyled>
 
@@ -47,6 +51,30 @@ overflow-y:auto;
 
 &::-webkit-scrollbar {
     width: 0.5rem;
+  }
+  
+  > h1 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight:800;
+    position: relative;
+
+  }
+
+  &::after {
+    content: "";
+    bottom: 0-5rem;
+    left: 0;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: ${(props) => props.theme.colorPrimaryGreen};
+    border-radius: 0.5rem;
+  }
+
+  .create-task{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 `;
 
