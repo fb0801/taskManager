@@ -75,7 +75,20 @@ overflow-y:auto;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+
+    height: 16rem;
+    color: ${(props) => props.theme.colorGrey2};
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 3px dashed ${(props) => props.theme.colorGrey5};
+    transition: all 0.3s ease;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colorGrey5};
+    color: ${(props) => props.theme.colorGrey0}
   }
+}
 `;
 
 export default Tasks
