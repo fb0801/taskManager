@@ -52,6 +52,10 @@ overflow-y:auto;
 &::-webkit-scrollbar {
     width: 0.5rem;
   }
+
+  .tasks{
+    marin: 2rem 0;
+  }
   
   > h1 {
     font-size: clamp(1.5rem, 2vw, 2rem);
