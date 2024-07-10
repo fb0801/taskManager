@@ -11,8 +11,10 @@ import { ClerkProvider, auth } from "@clerk/nextjs";
 import { Nunito } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
-
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({ 
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,15 +37,20 @@ export default function RootLayout({
       crossOrigin="anonymous" 
       referrerPolicy="no-referrer" />
       </head>
-      <body className={inter.className}>
-        <ContextProvider>
-        <GlobalStyleProvider>
-        {userId && <Sidebar />}
-        <div className="w-full">{children}</div>
-        </GlobalStyleProvider>
-        </ContextProvider>
+      <body className={nunito.className}>
+          <NextTopLoader
+            height={2}
+            color="#27AE60"
+            easing="cubic-bezier(0.53,0.21,0,1)"
+          />
+          <ContextProvider>
+            <GlobalStyleProvider>
+              {userId && <Sidebar />}
+              <div className="w-full">{children}</div>
+            </GlobalStyleProvider>
+          </ContextProvider>
         </body>
-    </html>
+      </html>
     </ClerkProvider>
   );
 }
